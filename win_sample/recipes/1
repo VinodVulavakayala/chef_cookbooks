@@ -1,0 +1,17 @@
+#
+# Cookbook:: win_sample
+# Recipe:: default
+#
+# Copyright:: 2019, The Authors, All Rights Reserved
+file 'C:\chef\sample.txt' do
+  content '<html>This is a placeholder for the home page.</html>'
+end
+directory 'C:MyDirectory' do
+  action :create
+  recursive true
+end
+
+windows_firewall_rule 'Remove the SSH rule' do
+  rule_name 'ssh'
+  action :delete
+end
